@@ -1,0 +1,9 @@
+Safi u rehman
+ALi zaib 
+Sarosh Ahemad
+Jawad Ahmed
+<<<<<<< HEAD
+sdfghjklkjhg
+=======
+I am php and laravel developer s
+>>>>>>> ce58786 (text file updated)

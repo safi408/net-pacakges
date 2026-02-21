@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISP Internet Packages</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<style>
+    html { scroll-behavior: smooth; }
+    section { padding: 100px 0; }
+    #hero { 
+        background: linear-gradient(135deg, #fd7d0d, #63ff82); 
+        color: #fff; 
+        text-align: center; 
+        overflow: hidden;
+    }
+    #hero h1, #hero p { opacity: 0; transform: translateY(-30px); animation: fadeInUp 1s forwards; }
+    #hero h1 { animation-delay: 0.3s; font-size: 3rem; }
+    #hero p { animation-delay: 0.6s; font-size: 1.3rem; }
+    #hero .btn { animation: bounceIn 1s forwards; animation-delay: 1s; }
+    @keyframes fadeInUp { to { opacity:1; transform: translateY(0); } }
+    @keyframes bounceIn { 0%,20%,40%,60%,80%,100% {transform: translateY(-10px);} }
+    .navbar { box-shadow: 0 2px 8px rgba(0, 0, 0, 0.511); }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: 0.3s; }
+    .feature-icon { font-size: 3rem; transition: transform 0.3s; }
+    .feature-icon:hover { transform: scale(1.2); color: #0d6efd; }
+    
+</style>
+</head>
+<body>
+
+<!-- Modern Navbar with Icons -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm py-3" 
+     style="background: linear-gradient(90deg,  #1e3c72, #2a5298); transition:0.4s;">
+  <div class="container">
+    
+  <!-- Logo with Image -->
+<a class="navbar-brand fw-bold fs-4 d-flex align-items-center" href="#">
+  <img src="school.png" alt="ISP Logo" width="40" height="40" class="me-2 rounded-circle">
+  ISP Website
+</a>
+
+
+    <!-- Mobile Toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#modernNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="modernNavbar">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        
+        <li class="nav-item">
+          <a class="nav-link px-3 d-flex align-items-center" href="#hero">
+            <i class="bi bi-house-door me-1"></i> Home
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link px-3 d-flex align-items-center" href="#packages">
+            <i class="bi bi-box-seam me-1"></i> Packages
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link px-3 d-flex align-items-center" href="#features">
+            <i class="bi bi-stars me-1"></i> Features
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link px-3 d-flex align-items-center" href="#faq">
+            <i class="bi bi-question-circle me-1"></i> FAQ
+          </a>
+        </li>
+
+        <!-- CTA Button -->
+        <li class="nav-item">
+          <a class="btn btn-light text-primary fw-semibold ms-lg-3 px-4 rounded-pill shadow-sm d-flex align-items-center" href="#contact">
+            <i class="bi bi-envelope me-2"></i> Contact
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+    const navbar = document.getElementById('navbar');
+    const logo = document.getElementById('navbarLogo');
+
+    window.addEventListener('scroll', () => {
+        if(window.scrollY > 50) {
+            navbar.style.background = '#0d6efd'; // solid color on scroll
+            navbar.style.boxShadow = '0 6px 20px rgba(0,0,0,0.25)';
+            navbar.style.padding = '0.5rem 1rem'; // shrink effect
+            logo.style.fontSize = '1.2rem';
+        } else {
+            navbar.style.background = 'linear-gradient(90deg, #0d6efd, #6610f2)';
+            navbar.style.boxShadow = 'none';
+            navbar.style.padding = '1rem 1rem';
+            logo.style.fontSize = '1.5rem';
+        }
+    });
+</script>
+
+<style>
+    .navbar-nav .nav-link {
+        font-weight: 500;
+        position: relative;
+        transition: 0.3s;
+    }
+
+    /* Smooth sliding underline effect */
+    .navbar-nav .nav-link::after {
+        content: '';
+        display: block;
+        height: 2px;
+        width: 0;
+        background: #fff;
+        transition: width 0.3s;
+        margin-top: 4px;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+        width: 100%;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #fff;
+    }
+
+    /* Hamburger icon color change */
+    .navbar-dark .navbar-toggler-icon {
+        filter: invert(1);
+    }
+
+    /* CTA button hover */
+    .navbar .btn-primary:hover {
+        background: #58f210;
+        border-color: #f210aa;
+        transform: scale(1.05);
+        transition: 0.3s;
+    }
+</style>
+
+
+
+<!-- Curved Hero Banner -->
+<section class="position-relative d-flex align-items-center text-center text-lg-start" 
+         style="height:100vh; background: url('internent.png')  center/cover no-repeat;">
+  
+  <!-- Overlay -->
+  <div style="position:absolute; top:0; left:0; width:100%; height:100%;
+              background:rgba(0,0,0,0.6);">
+  </div>
+
+  <!-- Content -->
+  <div class="container position-relative text-white">
+    <div class="row align-items-center">
+      <div class="col-lg-8">
+        <h1 class="fw-bold display-3">Fast & Reliable Internet</h1>
+        <p class="lead mt-3">Affordable packages for home & office</p>
+        <a href="#packages" class="btn btn-primary btn-lg mt-4 px-5 py-3 rounded-pill shadow-lg">
+          View Packages
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Animation Styles -->
+<style>
+    /* Text Animation */
+    .hero-text {
+        opacity:0;
+        transform:translateY(-30px);
+        animation: fadeInUp 1s forwards;
+    }
+    .hero-text:nth-child(1) { animation-delay:0.3s; }
+    .hero-text:nth-child(2) { animation-delay:0.6s; }
+
+    /* Button Animation */
+    .hero-btn {
+        opacity:0;
+        transform:translateY(-20px);
+        animation: bounceIn 1s forwards;
+    }
+
+    /* Floating Hero Image */
+    .hero-image {
+        animation: floatImage 2s ease-out forwards 1s;
+    }
+
+    @keyframes fadeInUp { to { opacity:1; transform:translateY(0); } }
+    @keyframes bounceIn { 
+        0%,20%,40%,60%,80%,100% { transform:translateY(-10px); opacity:1; }
+    }
+    @keyframes floatImage {
+        to { transform:translateY(0); opacity:1; }
+    }
+</style>
+
+
+
+<!-- Packages Section -->
+<section id="packages" class="py-5" style="background:#f0f2f5;">
+    <div class="container">
+        <h2 class="text-center mb-5 fw-bold" style="letter-spacing:1px;">Internet Packages</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+
+            <!-- Starter Package -->
+            <div class="col">
+                <div class="card h-100 package-card text-center p-4 border-0" style="background: linear-gradient(145deg, #ffffff, #e6f0ff); transition: transform 0.3s, box-shadow 0.3s;">
+                    <h5 class="card-title fw-bold">Starter</h5>
+                    <p class="card-text text-muted">Basic package for small homes</p>
+                    <ul class="list-group list-group-flush mb-3 text-start">
+                        <li class="list-group-item">Speed: 100 Mbps</li>
+                        <li class="list-group-item">Price: $30/month</li>
+                        <li class="list-group-item">Validity: 30 days</li>
+                    </ul>
+                    <a href="tel:+923001234567" class="btn btn-gradient w-100 fw-bold shadow-sm">
+                        📞 Call Now: +92 300 1234567
+                    </a>
+                </div>
+            </div>
+
+            <!-- High-Speed Package -->
+            <div class="col">
+                <div class="card h-100 package-card text-center p-4 border-0" style="background: linear-gradient(145deg, #ffffff, #d9f7e9); transition: transform 0.3s, box-shadow 0.3s;">
+                    <h5 class="card-title fw-bold">High-Speed</h5>
+                    <p class="card-text text-muted">Perfect for streaming & gaming</p>
+                    <ul class="list-group list-group-flush mb-3 text-start">
+                        <li class="list-group-item">Speed: 500 Mbps</li>
+                        <li class="list-group-item">Price: $50/month</li>
+                        <li class="list-group-item">Validity: 30 days</li>
+                    </ul>
+                    <a href="tel:+923001234568" class="btn btn-gradient w-100 fw-bold shadow-sm">
+                        📞 Call Now: +92 300 1234568
+                    </a>
+                </div>
+            </div>
+
+            <!-- Premier Package -->
+            <div class="col">
+                <div class="card h-100 package-card text-center p-4 border-0" style="background: linear-gradient(145deg, #ffffff, #ffe6e6); transition: transform 0.3s, box-shadow 0.3s;">
+                    <h5 class="card-title fw-bold">Premier</h5>
+                    <p class="card-text text-muted">Ultimate package for large homes/offices</p>
+                    <ul class="list-group list-group-flush mb-3 text-start">
+                        <li class="list-group-item">Speed: 1 Gbps</li>
+                        <li class="list-group-item">Price: $80/month</li>
+                        <li class="list-group-item">Validity: 30 days</li>
+                    </ul>
+                    <a href="tel:+923001234569" class="btn btn-gradient w-100 fw-bold shadow-sm">
+                        📞 Call Now: +92 300 1234569
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 3D Hover Animation Script -->
+<script>
+    const cards = document.querySelectorAll('.package-card');
+
+    cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * 8;
+            const rotateY = ((x - centerX) / centerX) * 8;
+
+            card.style.transform = `rotateX(${-rotateX}deg) rotateY(${rotateY}deg) translateZ(0)`;
+            card.style.boxShadow = `${-rotateY*2}px ${rotateX*2}px 25px rgba(0,0,0,0.25)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+            card.style.boxShadow = '0 8px 20px rgba(0,0,0,0.1)';
+        });
+    });
+</script>
+
+<style>
+    .package-card {
+        perspective: 1000px;
+        transform-style: preserve-3d;
+        border-radius: 15px;
+    }
+
+    /* Gradient Button Animation */
+    .btn-gradient {
+        background: linear-gradient(45deg, #0d6efd, #6c63ff);
+        color: #fff;
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+    .btn-gradient:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        background: linear-gradient(45deg, #6c63ff, #0d6efd);
+    }
+
+    /* List group styling */
+    .list-group-item {
+        border: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+</style>
+
+
+
+
+
+<!-- Features Section -->
+<section id="features" class="bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Features & Add-ons</h2>
+        <div class="row text-center">
+            <div class="col-md-4 mb-3">
+                <i class="bi bi-speedometer2 feature-icon"></i>
+                <h5 class="mt-3">High Speed Internet</h5>
+            </div>
+            <div class="col-md-4 mb-3">
+                <i class="bi bi-wifi feature-icon"></i>
+                <h5 class="mt-3">Reliable Wi-Fi</h5>
+            </div>
+            <div class="col-md-4 mb-3">
+                <i class="bi bi-phone feature-icon"></i>
+                <h5 class="mt-3">24/7 Customer Support</h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq">
+    <div class="container">
+        <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        What is the difference between fiber and cable internet?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Fiber is faster and more reliable compared to cable internet.</div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        How do I subscribe to a package?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">Click "Subscribe Now" on any package and fill the contact form below.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">Contact Us</h2>
+        <form>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                </div>
+            </div>
+            <div class="mt-3">
+                <textarea class="form-control" placeholder="Your Message" rows="4" required></textarea>
+            </div>
+            <div class="text-center mt-3">
+                <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary text-white text-center py-3">
+    &copy; 2025 ISP Website. All Rights Reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
